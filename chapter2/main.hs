@@ -25,5 +25,16 @@ isPalindrome :: String -> Bool
 isPalindrome xs = xy == reverse xy
                 where xy = map toLower (filter isAlpha xs)
 
+
+
+expp :: Integer -> Integer -> Integer
+expp x n | n == 0 = 1
+        | n == 1 = x
+        | even n = expp (x*x) m
+        | odd n = x * expp (x*x) m -- here the code on book is wrong 
+        where m = n `div` 2
+
+
 main = do
+    print (expp 2 5)
     
