@@ -24,6 +24,8 @@ helper (w:ws) goal = if null ws then snd w : []
                      else helper ws goal
 
 
+                     
+
 main = do
     -- print(searchRec "senselessness's" 's')
     print (""++[])
