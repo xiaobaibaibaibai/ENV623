@@ -46,10 +46,8 @@ boxs = map ungroup . ungroup .
        map cols .
        group . map group
 
-
 cols [xs]       = [[x] | x <- xs]
 cols (xs:xss)   = zipWith (:) xs (cols xss)
-
 
 rows = id
 
@@ -82,4 +80,6 @@ myGrid = [['5','3','0','0','7','0','0','0','0'],
           ['0','6','0','0','0','0','2','8','0'],
           ['0','0','0','4','1','9','0','0','5'],
           ['0','0','0','0','8','0','0','7','9']]
-         
+
+main = do
+    print(solve myGrid)
