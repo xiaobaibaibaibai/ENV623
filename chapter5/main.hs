@@ -1,4 +1,4 @@
-import Data.List (nub, sort)  
+import Data.List (nub, sort, inits, tails)  
 
 add :: Num a => a -> [a]
 add x = x : ([[]]!!0)
@@ -127,6 +127,19 @@ minimum1 (x:xs) = if x >= head xs
                   then minimum1 xs
                   else minimum1 (x:(tail xs))
 
+segments :: [a] -> [[a]]
+segments xss = concat (map inits (tails xss))
+
+
+allApply :: ([a] -> Bool) -> [a] -> [[a]]
+allApply p xss = filter p (segments xss)
+
+maxLenList :: (Ord a) => [[a]] -> [a]
+maxLenList [xs] = xs
+maxLenList (xs:ys:zss) = if (length xs >= length ys)
+                       then maxLenList (xs:zss)
+                       else maxLenList (ys:zss) 
+
 
 main = do
     -- print (cols [[1, 2, 3], [4, 5, 6], [7, 8, 9]])
@@ -144,7 +157,12 @@ main = do
     -- print (takeWhile1 (< 3) [1..5])
     -- print (dropWhile1 (< 3) [1..5])
 
-    print (minimum1 [1..3])
-    print (minimum1 [3, 2, 1])
-    print (minimum1 [12, 4, 7, 9, 11])
+    -- print (minimum1 [1..3])
+    -- print (minimum1 [3, 2, 1])
+    -- print (minimum1 [12, 4, 7, 9, 11])
+
+    -- print (segments [1,2,3])
+    -- print (allApply even [2, 4, 7, 3])
+    -- print (allApply (all even) [2, 3, 4, 8])
+    print (maxLenList (allApply (all even) [2, 3, 4, 8]))
     

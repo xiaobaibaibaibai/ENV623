@@ -1,0 +1,12 @@
+define a function taking matrix, vector and scalar and decideing whether the vector is an eigenvector
+
+decide given a matrix of Ints whether there is a saddle point
+
+return value of a saddle point, and / or its position
+
+don't use (!!)
+
+given an Int, return identity matrix of the given dimerison
+
+given i, j, return a matrix with 1 in ith row, jth column...(others are all 0)
+
