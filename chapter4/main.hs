@@ -13,4 +13,4 @@ position x xs
 
 main = do
     -- print(map (+1) [1,2,3])
-    print(position 1 [1..10])
+    print(position 2 [1..10])

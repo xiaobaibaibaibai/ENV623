@@ -1,0 +1,9 @@
+apple
+animal
+banana
+pencile
+monod
+test
+faker
+zoomer
+latest

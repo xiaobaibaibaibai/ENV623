@@ -4,3 +4,4 @@ y = 3
 main = do
     let out = x : reverse (ys ++ [y])
     print ( out )
+    print (length ys)
